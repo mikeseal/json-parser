@@ -1,6 +1,4 @@
 ﻿using System.Text.Json;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 
 #nullable enable
 
@@ -30,7 +28,7 @@ class Program
                     myData.Add(myObject);
             }
 
-            IOrderedEnumerable<MyData> Records = myData.OrderBy(x => x.Age);
+            IOrderedEnumerable<MyData> Records = myData.OrderByDescending(x => x.Age);
             foreach (var Record in Records)
             {
                 Console.WriteLine($"Name: {Record.Name} Age: {Record.Age}");
